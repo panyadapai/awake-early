@@ -14,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/region', [AwakeEarlyController::class,"index"]);
+Route::get('/', [AwakeEarlyController::class, "index"])->name('home');
+Route::get('/create', [AwakeEarlyController::class, "create"]);
+Route::get('/region', [AwakeEarlyController::class, "getFromPostcode"]);

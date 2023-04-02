@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegionsTable extends Migration
+class CreateFormPostCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateRegionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('regions', function (Blueprint $table) {
+        Schema::create('form_post_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('region_name');
-            $table->string('image');
-            // $table->timestamps();
+            $table->integer('region_id');
+            $table->string('postcode');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateRegionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('regions');
+        Schema::dropIfExists('form_post_codes');
     }
 }
