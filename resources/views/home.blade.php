@@ -16,6 +16,12 @@
             font-family: 'Prompt', sans-serif;
         }
 
+        .bg {
+            background-image: url({{ asset('img/InputCodepic.png') }});
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         #zipcode {
             background-color: #FF5757;
             color: white;
@@ -42,9 +48,9 @@
     </style>
 </head>
 
-<body>
+<body class="bg">
     <div class="container">
-        <div style="height: 100vh" class=" flex-column d-flex justify-content-center align-items-center gap-3">
+        <div style="height: 100vh;" class=" flex-column d-flex justify-content-center align-items-center gap-3">
             <label for="zipcode" class="h3">กรอกรหัสไปรษณีย์</label>
             <input id="zipcode" oninput="this.value = this.value.replace(/[^0-9]/g, '')" name="code"
                 class="p-2 form-control" pattern="[0-9]*" maxlength="5" onkeydown="if (event.keyCode == 13) sendData()"
